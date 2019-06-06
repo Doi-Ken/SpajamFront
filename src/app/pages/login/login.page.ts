@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, MenuController, ToastController, AlertController, LoadingController } from '@ionic/angular';
+import { HttpService } from '../../services/http/httpservice.service';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,10 @@ import { NavController, MenuController, ToastController, AlertController, Loadin
 })
 export class LoginPage implements OnInit {
   public onLoginForm: FormGroup;
+  
+  private url = "http://localhost:5000/tasks"
+
+  public loginTitle;
 
   constructor(
     public navCtrl: NavController,
@@ -16,7 +21,8 @@ export class LoginPage implements OnInit {
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private http: HttpService
   ) { }
 
   ionViewWillEnter() {
@@ -33,6 +39,12 @@ export class LoginPage implements OnInit {
         Validators.required
       ])]
     });
+   
+    this.get(1);
+  }
+
+  async get(id: number){
+    return await this.http.get(this.url).then(res => {this.loginTitle = res['message'][id]});
   }
 
   async forgotPass() {
