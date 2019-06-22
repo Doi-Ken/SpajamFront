@@ -1,29 +1,24 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-avatar slot='start'>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
     <ion-title>
-        <ion-text color="light">
-          <ion-text color="light" class="fw700">Ionic 4 Start</ion-text>
+        <ion-text color="dark">
+          <ion-text color="dark" class="fw700">Dashboard</ion-text>
         </ion-text>
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button size="small" shape="round" color="medium" (click)="notifications()">
+      <ion-button size="small" shape="round" color="dark" (click)="notifications()">
         <ion-icon name="notifications"></ion-icon>
         <ion-badge color="dark" slot="end">2</ion-badge>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar color="dark">
-    <ion-searchbar [(ngModel)]="searchKey"></ion-searchbar>
-    <ion-buttons slot="end">
-      <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
-        <ion-icon name="options"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card no-margin class="no-radius">
+<ion-content >
+  <!-- <ion-card no-margin class="no-radius">
     <ion-item lines="none" color="medium">
       <ion-label>
         <h2 no-margin class="fw500 no-margin">
@@ -34,23 +29,62 @@
           <ion-text  color="primary">{{yourLocation}}</ion-text>
         </p>
       </ion-label>
-      <ion-button shape="round" fill="outline" size="small" color="primary" (click)="alertLocation()">
-        Location
-        <ion-icon name="locate"></ion-icon>
-      </ion-button>
     </ion-item>
+  </ion-card> -->
+  <ion-item padding>
+    <ion-text color="dark">目標まで</ion-text>
+    <p class="text-11x no-margin">
+      <ion-text class="weight_goal_font">{{weight_goal}}</ion-text>
+      <ion-text color="dark" >kg</ion-text>
+    </p>
+  </ion-item>
+    
+ <ion-card padding color='medium'>
+    <div #chartContainer class='weightchart-container'>
+        <canvas  #chartcanvas id="weightChart"></canvas>
+    </div>
+ </ion-card>
+
+ <ion-item class="todaysinfo">
+    <ion-text color="dark">Today's Calories</ion-text>
+  <ion-card class="todayslog">
+     <ion-text color="dark">Intake</ion-text>
+     <p class="text-11x no-margin">
+       <ion-text  class=text-white>{{today_intake}}</ion-text>
+       <ion-text color="dark" >kcal</ion-text>
+     </p>
   </ion-card>
 
-  <ion-card class="bg-white">
-    <ion-img [src]="themeCover"></ion-img>
-    <ion-button expand="full" color="dark" (click)="presentImage(themeCover)" no-margin>
-      Modal 1: Modal Image
-    </ion-button>
+  <ion-text class="text-white">{{today_total}}</ion-text>
+  <ion-text color="dark" >kcal</ion-text>
+
+  <ion-card class="todayslog">
+     <ion-text color="dark">Consume</ion-text>
+     <p class="text-11x no-margin">
+       <ion-text  class="text-white">{{today_consume}}</ion-text>
+       <ion-text color="dark" >kcal</ion-text>
+     </p>
   </ion-card>
+ </ion-item>
 
-  <ion-button margin shape="round" expand="full" color="secondary" (click)="searchFilter()">
-    Modal 2: Search Filter
-  </ion-button>
+ <ion-card padding color='medium'>
+    <ion-text>Charts</ion-text>
+ </ion-card>
+ 
 
-  <popmenu></popmenu>
+ <ion-tabs>
+    <!-- Tab bar -->
+    <ion-tab-bar slot="bottom" color="primary">
+      <ion-tab-button tab="home-results">
+        <ion-icon name="md-home"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="camera">
+        <ion-icon name="images"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="details">
+        <ion-icon name="stats"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+ <!-- <popmenu></popmenu> -->
 </ion-content>

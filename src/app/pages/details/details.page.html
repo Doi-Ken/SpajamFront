@@ -1,9 +1,66 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>details</ion-title>
+  <ion-toolbar color="light">
+    <ion-avatar slot='start'>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-title>
+        <ion-text color="dark">
+          <ion-text color="dark" class="fw700">Dashboard</ion-text>
+        </ion-text>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="dark" (click)="notifications()">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge color="dark" slot="end">2</ion-badge>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+  
+  <!-- Segment with secondary color -->
+  <ion-segment (ionChange)="segmentChanged($event)" color=warning>
+    <ion-segment-button value="Daily" (ionSelect)="segmentButtonClicked($event)">
+      <ion-label>Daily</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Weekly" (ionSelect)="segmentButtonClicked($event)">
+      <ion-label>Weekly</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Monthly" (ionSelect)="segmentButtonClicked($event)">
+      <ion-label>Monthly</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
-<ion-content padding>
+<ion-content >
+  <ion-card>
+    
+  </ion-card>
+    
+  <ion-card padding color='medium'>
+    <ion-text>Total Calories</ion-text>
+  </ion-card>
 
+  <ion-card padding color='medium'>
+      <ion-text>Intake Calories</ion-text>
+  </ion-card>
+
+  <ion-card padding color='medium'>
+     <ion-text>Consumed Calories</ion-text>
+  </ion-card>
+  
+  <!-- 選択したタブの色を変えたい -->
+  <ion-tabs>
+      <!-- Tab bar -->
+      <ion-tab-bar slot="bottom" color="primary">
+        <ion-tab-button tab="home-results">
+          <ion-icon name="md-home"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="camera">
+          <ion-icon name="images"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="detail">
+          <ion-icon name="stats"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+  </ion-tabs>
+  <!-- <popmenu></popmenu> -->
 </ion-content>
