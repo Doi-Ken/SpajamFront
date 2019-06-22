@@ -1,5 +1,29 @@
 :host {
   ion-content {
-    --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary))
+    --background: linear-gradient(135deg, var(--ion-color-light), var(--ion-color-secondary))
   }
 }
+
+  .ion-color-fb { 
+    --ion-color-base: #153bc2; 
+    --ion-color-base-rgb: 21,59,194; 
+    --ion-color-contrast: #ffffff; 
+    --ion-color-contrast-rgb: 255,255,255; 
+    --ion-color-shade: #1234ab; 
+    --ion-color-tint: #2c4fc8; }
+
+ .ion-color-twt { 
+    --ion-color-base: #00c3f5; 
+    --ion-color-base-rgb: 0,195,245; 
+    --ion-color-contrast: #000000; 
+    --ion-color-contrast-rgb: 0,0,0; 
+    --ion-color-shade: #00acd8; 
+    --ion-color-tint: #1ac9f6; }
+
+    .ion-color-ggl { 
+      --ion-color-base: #f3e036; 
+      --ion-color-base-rgb: 243,224,54; 
+      --ion-color-contrast: #000000; 
+      --ion-color-contrast-rgb: 0,0,0; 
+      --ion-color-shade: #d6c530; 
+      --ion-color-tint: #f4e34a; }
