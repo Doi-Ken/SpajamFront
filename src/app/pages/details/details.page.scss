@@ -1,0 +1,20 @@
+:host {
+    ion-content {
+        --background: linear-gradient(130deg, var(--ion-color-light), var(--ion-color-secondary))
+      }
+
+    ion-item {
+         border-radius: 0;
+      }
+
+    ion-card {
+        &.no-radius {
+            border-radius: 0;
+        }
+    }
+
+    ion-segment {
+        background-color: #3d3a6e79;
+    }
+
+}

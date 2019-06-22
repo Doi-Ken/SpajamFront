@@ -27,16 +27,16 @@ export class AppComponent {
         icon: 'home'
       },
       {
-        title: 'About',
-        url: '/about',
+        title: 'Camera',
+        url: '/camera',
         direct: 'forward',
-        icon: 'information-circle-outline'
+        icon: 'images'
       },
       {
-        title: 'App Settings',
-        url: '/settings',
+        title: 'Details',
+        url: '/details',
         direct: 'forward',
-        icon: 'cog'
+        icon: 'stats'
       }
     ];
 
