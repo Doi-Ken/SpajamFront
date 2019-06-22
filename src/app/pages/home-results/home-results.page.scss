@@ -1,16 +1,38 @@
 :host {
     ion-content {
-        --background: var(--ion-color-light);
-    }
+        --background: linear-gradient(135deg, var(--ion-color-light), var(--ion-color-secondary))
+      }
 
     ion-item {
-        border-radius: 0;
-        border-bottom: 1px dotted var(--ion-color-medium);
-    }
+         border-radius: 0;
+      }
 
     ion-card {
         &.no-radius {
             border-radius: 0;
         }
     }
+
+    .todaysinfo{
+
+    }
+    .todayslog{
+        padding-top: 3%;
+        padding-bottom: 3%;
+        padding-left: 3%;
+        padding-right: 3%;
+        --background: var(--ion-color-secondary);
+        width: 150px;
+        height: 80px;
+    }
+    .weight_goal_font{
+        font-size: 60px;
+        color: #f0d909de;
+    }
+    .weightchart-container{
+        background-color: var(--ion-color-medium);
+        border-color: var(--ion-color-dark);
+        border-width: 1ch
+    }
+
 }

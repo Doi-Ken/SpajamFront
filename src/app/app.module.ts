@@ -4,6 +4,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
+//import { ChartsModule } from 'ng2-charts';
 
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -33,7 +34,8 @@ import { HttpService } from "./services/http/httpservice.service";
     HttpClientModule,
     HttpModule,
     ImagePageModule,
-    SearchFilterPageModule
+    SearchFilterPageModule,
+  //  ChartsModule
   ],
   entryComponents: [NotificationsComponent],
   providers: [
