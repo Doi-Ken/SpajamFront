@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
 import { Pages } from './interfaces/pages';
 
 @Component({
@@ -34,7 +32,6 @@ export class AppComponent {
         direct: 'forward',
         icon: 'information-circle-outline'
       },
-
       {
         title: 'App Settings',
         url: '/settings',
@@ -54,7 +51,7 @@ export class AppComponent {
   }
 
   goToEditProgile() {
-    this.navCtrl.navigateForward('edit-profile');
+    this.navCtrl.navigateForward('home-results');
   }
 
   logout() {
