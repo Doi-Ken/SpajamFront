@@ -35,7 +35,7 @@ import { HttpService } from "./services/http/httpservice.service";
     HttpModule,
     ImagePageModule,
     SearchFilterPageModule,
-  //  ChartsModule
+    //ChartsModule
   ],
   entryComponents: [NotificationsComponent],
   providers: [
