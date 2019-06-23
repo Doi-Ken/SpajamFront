@@ -29,6 +29,7 @@ ionViewDidLoad() {
 takePicture(){
   const options: CameraOptions = {
     quality: 75,
+    sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
     destinationType: this.camera.DestinationType.DATA_URL,
     encodingType: this.camera.EncodingType.JPEG,
     mediaType: this.camera.MediaType.PICTURE
