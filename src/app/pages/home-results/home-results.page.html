@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-avatar slot='start'>
+    <ion-avatar slot='start' class="profile">
         <img src="../../../assets/img/UNADJUSTEDNONRAW_thumb_28a.jpg">
     </ion-avatar>
     <ion-title>
@@ -33,18 +33,19 @@
   </ion-card> -->
   <ion-item class="pictures">
       <ion-img style="width:330px; height:100px;" src="../../../assets/img/Stretching Basics.jpg"></ion-img>
-      <ion-img style="width:330px; height:100px;" src="../../../assets/img/09-59-29-25-07-2018-030a74c3d88731d96896.jpg"></ion-img>
+      <ion-img style="width:330px; height:100px;" src="../../../assets/img/c83cd_1501_0efb5b1a_687ec6b1.jpg"></ion-img>
   </ion-item>
-  <ion-item padding>
-    <ion-text color="dark">目標まで</ion-text>
+  <ion-item >
+    <ion-text color="dark">You can take</ion-text>
     <p class="text-11x no-margin">
-      <ion-text class="weight_goal_font">{{weight_goal}}</ion-text>
-      <ion-text color="dark" >kg</ion-text>
+      <ion-text class="weight_goal_font">{{today_total}}</ion-text>
+      <ion-text color="dark" >kcal</ion-text>
     </p>
   </ion-item>
     
  <ion-card padding color='medium'>
-    <div color="dark">Chart</div>
+    <div color="dark">Calories Chart</div>
+    <ion-img style="width:300px; height:100px;" src="../../../assets/img/UNADJUSTEDNONRAW_mini_28b.jpg"></ion-img>
  </ion-card>
 
  <ion-item class="todaysinfo">
@@ -56,9 +57,6 @@
        <ion-text color="dark" >kcal</ion-text>
      </p>
   </ion-card>
-
-  <ion-text class="text-white">{{today_total}}</ion-text>
-  <ion-text color="dark" >kcal</ion-text>
 
   <ion-card class="todayslog">
      <ion-text color="dark">Consume</ion-text>

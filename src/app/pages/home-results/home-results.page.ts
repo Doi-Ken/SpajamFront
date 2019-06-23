@@ -64,7 +64,7 @@ export class HomeResultsPage implements OnInit {
     return this.http.get(this.calorie_url)
     .then(res => { this.today_intake = res['intake'];
                     this.today_consume = res['consume'];
-                    this.today_total = this.today_intake - this.today_consume;
+                    this.today_total = (1500 - this.today_intake - this.today_consume);
                     console.log(res);
     });
   }
