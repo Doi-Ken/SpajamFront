@@ -19,4 +19,6 @@
     <div *ngIf="imgSrc">
       <img src="{{imgSrc}}" alt="" class="img-taken">
     </div>
+  <ion-button ion-button argin shape="round" expand="full" color="secondary" (click)="submit()">Submit</ion-button>
+  <ion-text color="light"> {{ calories_response }} </ion-text>
 </ion-content>

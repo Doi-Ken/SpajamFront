@@ -7,6 +7,9 @@ import {
   ToastController,
   PopoverController,
   ModalController } from '@ionic/angular';
+import { HttpService } from 'src/app/services/http/httpservice.service';
+import { stringify } from '@angular/core/src/util';
+import { data } from './data';
 
 @Component({
   selector: 'app-camera',
@@ -16,8 +19,14 @@ import {
 export class CameraPage implements OnInit {
 
   imgSrc: string;
+  files: FileList;
+  intake_url = "http://ec2-13-115-231-20.ap-northeast-1.compute.amazonaws.com/intake";
 
-constructor( private camera: Camera ) {
+  public calories_response;
+
+constructor( private camera: Camera,
+  private http: HttpService,
+  private jsondata: data ) {
 }
 ngOnInit() {
 }
@@ -40,10 +49,24 @@ takePicture(){
     .then((imageData)=>{
       let base64Image = 'data:image/jpeg;base64,' + imageData;
       this.imgSrc = base64Image;
+      this.files[0] = imageData;
     })
     .catch((err)=>{
       console.log(err);
     });
+
+
+  
+  }
+
+  submit() {
+
+    this.multipartPost();
+    console.log(this.calories_response);
+  }
+
+  async multipartPost() {
+    this.calories_response = await this.http.post(this.intake_url, JSON.stringify(this.jsondata));
   }
 
 }

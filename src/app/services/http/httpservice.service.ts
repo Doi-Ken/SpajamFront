@@ -40,6 +40,15 @@ export class HttpService {
       return Observable.throw(error.toString());
   }
 
-  
-  
+  multipartPost(files: FileList): Promise <any[]> {
+    let fileToUpload = files.item(0);
+
+    let formData = new FormData();
+    formData.append('file', fileToUpload, fileToUpload.name);
+
+    return this.http.post("https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition?user_key=ad744df19e93b7ea6692eeb1d9afe18c", formData)
+    .toPromise()
+    .then(this.extractData)
+    .catch(this.handlerError);
+  }
 }

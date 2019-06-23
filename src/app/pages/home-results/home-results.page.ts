@@ -25,7 +25,7 @@ import * as Chart from 'chart.js';
 
 export class HomeResultsPage implements OnInit {
   searchKey = '';
-  weight_goal = 'XX.X';
+  weight_goal = '3.2';
   public today_intake;
   public today_consume;
   public today_total;

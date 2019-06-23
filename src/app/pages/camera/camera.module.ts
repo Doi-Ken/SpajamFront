@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { Camera } from '@ionic-native/camera/ngx';
 import { IonicModule } from '@ionic/angular';
 import { CameraPage } from './camera.page';
+import { data } from './data';
 
 const routes: Routes = [
   {
@@ -21,6 +22,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [CameraPage],
-  providers: [Camera]
+  providers: [Camera, data]
 })
 export class CameraPageModule {}
