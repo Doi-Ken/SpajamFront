@@ -11,7 +11,7 @@ import { HttpService } from '../../services/http/httpservice.service';
 export class LoginPage implements OnInit {
   public onLoginForm: FormGroup;
   
-  private url = "http://localhost:5000/tasks"
+  private url = "http://localhost/tasks"
 
   public loginTitle;
 
